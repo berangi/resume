@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vladislav Diachkov — Junior Media Buyer</title>
+
+    <meta name="description"
+          content="Vladislav Diachkov — Junior Media Buyer с техническим бэкграундом в Python, AI, автоматизации и Vibe Coding.">
+
+    <style>
+
+        :root {
+            --sky: #7ddcff;
+            --sky-light: #bceeff;
+            --ocean: #20b9c9;
+            --ocean-dark: #087f9b;
+            --sand: #f5d99b;
+            --sand-light: #fff0c5;
+            --sun: #ffd85a;
+            --sun-orange: #ffad3d;
+            --palm: #075c4d;
+            --palm-dark: #034438;
+            --text: #173b45;
+            --muted: #55727a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+            background: var(--sand-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.45);
+        }
+
+        .nav-inner {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 900;
+            color: var(--palm-dark);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--sun-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: var(--palm-dark);
+        }
+
+        .nav-links a {
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ocean-dark);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            padding: 130px 0 170px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #75d8fa 0%,
+                    #a5e9f9 48%,
+                    #d8f3ed 67%,
+                    #f5d99b 68%,
+                    #efca82 100%
+                );
+        }
+
+        .sun {
+            position: absolute;
+
+            width: 210px;
+            height: 210px;
+
+            border-radius: 50%;
+
+            right: 13%;
+            top: 120px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #fff6a4 0%,
+                    var(--sun) 48%,
+                    var(--sun-orange) 100%
+                );
+
+            box-shadow:
+                0 0 60px rgba(255,210,70,0.55),
+                0 0 130px rgba(255,183,66,0.35);
+
+            animation: sunFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes sunFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.48);
+            border-radius: 999px;
+        }
+
+        .cloud.one {
+            width: 170px;
+            height: 35px;
+            top: 150px;
+            left: 7%;
+        }
+
+        .cloud.two {
+            width: 110px;
+            height: 25px;
+            top: 210px;
+            left: 28%;
+        }
+
+        .cloud.three {
+            width: 190px;
+            height: 35px;
+            top: 280px;
+            right: 25%;
+        }
+
+        .ocean {
+            position: absolute;
+
+            left: 0;
+            bottom: 105px;
+
+            width: 100%;
+            height: 145px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #51d2db,
+                    #14a9c1
+                );
+
+            clip-path: polygon(
+                0 25%,
+                8% 19%,
+                16% 27%,
+                24% 17%,
+                33% 28%,
+                42% 19%,
+                51% 29%,
+                60% 18%,
+                69% 28%,
+                78% 17%,
+                87% 28%,
+                100% 18%,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .wave {
+            position: absolute;
+
+            bottom: 135px;
+            left: -5%;
+
+            width: 110%;
+            height: 55px;
+
+            background: rgba(255,255,255,0.48);
+
+            border-radius: 50%;
+
+            transform: rotate(-2deg);
+
+            animation: wave 7s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateX(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateX(25px) rotate(-1deg);
+            }
+        }
+
+        .sand {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 125px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,0.4) 0 2px,
+                    transparent 3px
+                ),
+                radial-gradient(
+                    circle at 70% 70%,
+                    rgba(120,80,20,0.12) 0 2px,
+                    transparent 3px
+                ),
+                #f1d18f;
+
+            background-size: 55px 45px, 70px 60px;
+        }
+
+
+        /* =========================
+           PALMS
+        ========================= */
+
+        .palm {
+            position: absolute;
+            bottom: 92px;
+
+            width: 230px;
+            height: 330px;
+
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .palm.left {
+            left: -30px;
+            transform: rotate(-7deg);
+        }
+
+        .palm.right {
+            right: -35px;
+            transform: scaleX(-1) rotate(-7deg);
+        }
+
+        .trunk {
+            position: absolute;
+
+            bottom: 0;
+            left: 95px;
+
+            width: 27px;
+            height: 285px;
+
+            background:
+                repeating-linear-gradient(
+                    15deg,
+                    #65421e 0 12px,
+                    #7b5127 12px 23px
+                );
+
+            border-radius: 50% 50% 10% 10%;
+
+            transform: rotate(-10deg);
+            transform-origin: bottom;
+        }
+
+        .leaves {
+            position: absolute;
+
+            top: 5px;
+            left: 72px;
+
+            width: 110px;
+            height: 100px;
+        }
+
+        .leaf {
+            position: absolute;
+
+            width: 115px;
+            height: 23px;
+
+            background: var(--palm);
+
+            border-radius: 100% 0 100% 0;
+
+            transform-origin: left center;
+        }
+
+        .leaf:nth-child(1) { transform: rotate(-55deg); }
+        .leaf:nth-child(2) { transform: rotate(-25deg); }
+        .leaf:nth-child(3) { transform: rotate(5deg); }
+        .leaf:nth-child(4) { transform: rotate(35deg); }
+        .leaf:nth-child(5) { transform: rotate(65deg); }
+        .leaf:nth-child(6) { transform: rotate(95deg); }
+
+
+        /* =========================
+           HERO CONTENT
+        ========================= */
+
+        .hero-grid {
+            position: relative;
+            z-index: 5;
+
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+
+            gap: 70px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 15px;
+
+            border-radius: 999px;
+
+            background: rgba(255,255,255,0.55);
+            border: 1px solid rgba(255,255,255,0.7);
+
+            color: var(--palm-dark);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            backdrop-filter: blur(10px);
+
+            margin-bottom: 24px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            background: #16a66d;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 12px rgba(22,166,109,0.6);
+        }
+
+        h1 {
+            font-size: clamp(52px, 8vw, 88px);
+            line-height: .92;
+
+            letter-spacing: -5px;
+
+            color: var(--palm-dark);
+
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: var(--ocean-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+
+            color: #174d58;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #35616a;
+
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: .25s;
+        }
+
+        .btn-primary {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--ocean),
+                    var(--ocean-dark)
+                );
+
+            box-shadow:
+                0 8px 25px rgba(8,127,155,0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.58);
+
+            border: 1px solid rgba(255,255,255,0.8);
+
+            color: var(--palm-dark);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-card {
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.55);
+
+            border: 1px solid rgba(255,255,255,0.75);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px rgba(20,90,100,0.12);
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 29px;
+            font-weight: 900;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--ocean-dark),
+                    var(--palm)
+                );
+
+            margin-bottom: 23px;
+        }
+
+        .profile-card h3 {
+            font-size: 22px;
+
+            color: var(--palm-dark);
+
+            margin-bottom: 2px;
+        }
+
+        .profile-role {
+            color: var(--ocean-dark);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            margin-bottom: 23px;
+        }
+
+        .profile-item {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 11px 0;
+
+            border-bottom:
+                1px solid rgba(23,59,69,0.08);
+
+            font-size: 14px;
+        }
+
+        .profile-item:last-child {
+            border-bottom: 0;
+        }
+
+        .profile-item span:first-child {
+            color: var(--muted);
+        }
+
+        .profile-item span:last-child {
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            position: relative;
+
+            padding: 100px 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #fff2cb,
+                    #f7dda4
+                );
+
+            border-bottom:
+                1px solid rgba(100,70,20,0.08);
+        }
+
+        section:nth-of-type(even) {
+            background:
+                linear-gradient(
+                    180deg,
+                    #e4f8f3,
+                    #ccefeb
+                );
+        }
+
+        .section-label {
+            color: var(--ocean-dark);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--palm-dark);
+
+            font-size: clamp(34px, 5vw, 52px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 42px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-text {
+            max-width: 850px;
+
+            color: #3f6065;
+
+            font-size: 18px;
+        }
+
+        .about-text p + p {
+            margin-top: 20px;
+        }
+
+        .about-text strong {
+            color: var(--palm-dark);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 21px;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,0.55);
+
+            border:
+                1px solid rgba(255,255,255,0.8);
+
+            box-shadow:
+                0 8px 25px rgba(50,100,90,0.05);
+
+            transition: .25s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+
+            background: rgba(255,255,255,0.78);
+        }
+
+        .skill-title {
+            font-weight: 800;
+
+            color: var(--palm-dark);
+
+            margin-bottom: 5px;
+        }
+
+        .skill-description {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SOFT SKILLS
+        ========================= */
+
+        .soft-skills {
+            margin-top: 55px;
+        }
+
+        .soft-skills-title {
+            color: var(--palm-dark);
+
+            font-size: 25px;
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        .soft-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .soft-card {
+            padding: 22px;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255,255,255,0.58);
+
+            border:
+                1px solid rgba(255,255,255,0.8);
+
+            transition: .25s;
+        }
+
+        .soft-card:hover {
+            transform: translateY(-4px);
+
+            background:
+                rgba(255,255,255,0.78);
+        }
+
+        .soft-card h4 {
+            color: var(--palm-dark);
+
+            font-size: 17px;
+
+            margin-bottom: 7px;
+        }
+
+        .soft-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            max-width: 850px;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 35px;
+            padding-bottom: 20px;
+
+            border-left:
+                2px solid rgba(8,127,155,0.22);
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -7px;
+            top: 4px;
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+
+            background: var(--ocean);
+
+            box-shadow:
+                0 0 0 5px rgba(32,185,201,0.12);
+        }
+
+        .timeline-date {
+            color: var(--ocean-dark);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            margin-bottom: 7px;
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            font-weight: 800;
+
+            color: var(--palm-dark);
+        }
+
+        .timeline-company {
+            color: var(--muted);
+
+            margin-bottom: 20px;
+        }
+
+        .timeline ul {
+            padding-left: 19px;
+
+            color: #49666b;
+        }
+
+        .timeline li {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           VIBE CODING
+        ========================= */
+
+        .vibe-box {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 42px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.75),
+                    rgba(190,239,237,0.65)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.85);
+
+            box-shadow:
+                0 20px 60px rgba(20,100,110,0.08);
+        }
+
+        .vibe-box::after {
+            content: "</>";
+
+            position: absolute;
+
+            right: 35px;
+            top: 10px;
+
+            font-size: 110px;
+
+            font-weight: 900;
+
+            color: rgba(8,127,155,0.045);
+        }
+
+        .vibe-box h3 {
+            font-size: 29px;
+
+            color: var(--palm-dark);
+
+            margin-bottom: 13px;
+        }
+
+        .vibe-box p {
+            max-width: 750px;
+
+            color: #48666b;
+        }
+
+        .vibe-list {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 11px 30px;
+
+            margin-top: 23px;
+
+            color: #456369;
+        }
+
+        .vibe-list div::before {
+            content: "✓";
+
+            color: #0c9b7b;
+
+            font-weight: 900;
+
+            margin-right: 9px;
+        }
+
+
+        /* =========================
+           MEDIA BUYING
+        ========================= */
+
+        .media-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .media-card {
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.55);
+
+            border:
+                1px solid rgba(255,255,255,0.8);
+
+            transition: .25s;
+        }
+
+        .media-card:hover {
+            transform: translateY(-4px);
+
+            background: rgba(255,255,255,0.72);
+        }
+
+        .media-card h3 {
+            color: var(--palm-dark);
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .media-card p,
+        .media-card li {
+            color: #4c696e;
+        }
+
+        .media-card ul {
+            padding-left: 18px;
+        }
+
+        .media-card li {
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           GOAL
+        ========================= */
+
+        .goal {
+            max-width: 850px;
+        }
+
+        .goal p {
+            color: #48666b;
+
+            font-size: 19px;
+        }
+
+        .highlight {
+            color: var(--ocean-dark);
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background:
+                linear-gradient(
+                    180deg,
+                    #bcecef,
+                    #72d2df
+                );
+
+            border-bottom: none;
+        }
+
+        .contact-box {
+            text-align: center;
+
+            padding: 70px 30px;
+
+            border-radius: 28px;
+
+            background: rgba(255,255,255,0.55);
+
+            border:
+                1px solid rgba(255,255,255,0.8);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 25px 70px rgba(10,100,120,0.12);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 13px;
+        }
+
+        .contact-box p {
+            color: #46686e;
+
+            margin-bottom: 28px;
+        }
+
+        .contact-buttons {
+            justify-content: center;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #075c4d;
+
+            color: rgba(255,255,255,0.65);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .profile-card {
+                max-width: 500px;
+            }
+
+            .skills-grid,
+            .soft-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sun {
+                width: 150px;
+                height: 150px;
+
+                right: 5%;
+                top: 100px;
+            }
+
+            .palm {
+                opacity: .65;
+                transform: scale(.75);
+                transform-origin: bottom left;
+            }
+
+            .palm.right {
+                transform:
+                    scaleX(-1)
+                    scale(.75)
+                    rotate(-7deg);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .skills-grid,
+            .soft-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vibe-list {
+                grid-template-columns: 1fr;
+            }
+
+            .vibe-box {
+                padding: 28px;
+            }
+
+            .profile-card {
+                padding: 24px;
+            }
+
+            .palm {
+                opacity: .35;
+            }
+
+            .sun {
+                width: 110px;
+                height: 110px;
+                top: 100px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            Vlad<span>.</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">Обо мне</a>
+
+            <a href="#experience">Опыт</a>
+
+            <a href="#skills">Навыки</a>
+
+            <a href="#media-buying">Арбитраж</a>
+
+            <a href="#contact">Контакты</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+
+    <div class="sun"></div>
+
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+    <div class="cloud three"></div>
+
+    <div class="ocean"></div>
+
+    <div class="wave"></div>
+
+    <div class="sand"></div>
+
+
+    <!-- Пальма слева -->
+
+    <div class="palm left">
+
+        <div class="trunk"></div>
+
+        <div class="leaves">
+
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Пальма справа -->
+
+    <div class="palm right">
+
+        <div class="trunk"></div>
+
+        <div class="leaves">
+
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+            <div class="leaf"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container hero-grid">
+
+
+        <div>
+
+            <div class="badge">
+
+                <span class="status-dot"></span>
+
+                Открыт к предложениям Junior Media Buyer
+
+            </div>
+
+
+            <h1>
+
+                Vladislav<br>
+
+                <span>Diachkov</span>
+
+            </h1>
+
+
+            <div class="hero-subtitle">
+
+                Junior Media Buyer / Python Developer
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Начинающий специалист по закупке трафика
+                с техническим бэкграундом в Python,
+                AI, автоматизации.
+
+                Сочетаю аналитическое мышление,
+                программирование и интерес к performance marketing.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Связаться со мной
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    Подробнее обо мне
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="profile-card">
+
+
+            <div class="avatar">
+                VD
+            </div>
+
+
+            <h3>
+                Vladislav Diachkov
+            </h3>
+
+
+            <div class="profile-role">
+                Junior Media Buyer
+            </div>
+
+
+            <div class="profile-item">
+                <span>Город</span>
+                <span>Дананг, Вьетнам</span>
+            </div>
+
+
+            <div class="profile-item">
+                <span>Опыт</span>
+                <span>1,5 года</span>
+            </div>
+
+
+            <div class="profile-item">
+                <span>Английский</span>
+                <span>A2</span>
+            </div>
+
+
+            <div class="profile-item">
+                <span>Направление</span>
+                <span>Performance Marketing</span>
+            </div>
+
+
+            <div class="profile-item">
+                <span>Бэкграунд</span>
+                <span>Python / Фриланс</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-label">
+            01 — Обо мне
+        </div>
+
+
+        <h2>
+            Профессиональный профиль
+        </h2>
+
+
+        <div class="about-text">
+
+
+            <p>
+
+                Начинающий
+                <strong>
+                    Junior Media Buyer с техническим
+                    бэкграундом в Python-разработке
+                </strong>,
+                1,5 годами опыта на фрилансе и практическим
+                опытом использования AI-инструментов
+                и Vibe Coding.
+
+            </p>
+
+
+            <p>
+
+                Моя сильная сторона — сочетание аналитического
+                мышления, программирования и способности быстро
+                создавать и тестировать технические решения.
+
+            </p>
+
+
+            <p>
+
+                Умею работать с данными, API, автоматизацией
+                и веб-сервисами, а также использовать AI
+                для ускорения разработки и прототипирования.
+
+            </p>
+
+
+            <p>
+
+                Сейчас хочу применить технический опыт
+                в сфере
+                <strong>
+                    performance marketing и арбитража трафика
+                </strong>,
+                развиваясь в направлении Media Buying.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-label">
+            02 — Навыки
+        </div>
+
+
+        <h2>
+            Технические навыки
+        </h2>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Python
+                </div>
+
+                <div class="skill-description">
+                    Разработка, автоматизация и обработка данных
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Аналитика
+                </div>
+
+                <div class="skill-description">
+                    Анализ данных и поиск закономерностей
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Автоматизация
+                </div>
+
+                <div class="skill-description">
+                    Автоматизация рутинных процессов
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    API
+                </div>
+
+                <div class="skill-description">
+                    Интеграция сторонних сервисов
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Vibe Coding
+                </div>
+
+                <div class="skill-description">
+                    Быстрое прототипирование с помощью AI
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    AI
+                </div>
+
+                <div class="skill-description">
+                    Использование AI для разработки и поиска решений
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    SQL
+                </div>
+
+                <div class="skill-description">
+                    Работа с базами и структурированными данными
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Git
+                </div>
+
+                <div class="skill-description">
+                    Контроль версий и рабочий процесс разработки
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-title">
+                    Веб-сервисы
+                </div>
+
+                <div class="skill-description">
+                    Работа с API и различными онлайн-сервисами
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SOFT SKILLS -->
+
+        <div class="soft-skills">
+
+
+            <div class="soft-skills-title">
+                Личные качества
+            </div>
+
+
+            <div class="soft-grid">
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Быстрая обучаемость
+                    </h4>
+
+                    <p>
+                        Быстро разбираюсь в новых инструментах,
+                        технологиях и рабочих процессах.
+                    </p>
+
+                </div>
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Аналитическое мышление
+                    </h4>
+
+                    <p>
+                        Люблю работать с цифрами, находить
+                        закономерности и докапываться до причин.
+                    </p>
+
+                </div>
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Системный подход
+                    </h4>
+
+                    <p>
+                        Разбиваю сложные задачи на понятные этапы
+                        и последовательно двигаюсь к результату.
+                    </p>
+
+                </div>
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Инициативность
+                    </h4>
+
+                    <p>
+                        Не жду готового решения — самостоятельно
+                        ищу информацию и предлагаю варианты.
+                    </p>
+
+                </div>
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Ориентация на результат
+                    </h4>
+
+                    <p>
+                        Фокусируюсь не только на выполнении задачи,
+                        но и на конечном результате.
+                    </p>
+
+                </div>
+
+
+                <div class="soft-card">
+
+                    <h4>
+                        Ответственность
+                    </h4>
+
+                    <p>
+                        Привык самостоятельно отвечать за задачи,
+                        сроки и качество своей работы.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+
+        <div class="section-label">
+            03 — Опыт работы
+        </div>
+
+
+        <h2>
+            Фриланс
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+
+                <div class="timeline-date">
+                    1,5 ГОДА
+                </div>
+
+
+                <div class="timeline-title">
+                    Python Developer
+                </div>
+
+
+                <div class="timeline-company">
+                    Фриланс
+                </div>
+
+
+                <ul>
+
+                    <li>
+                        Разрабатывал Python-решения под задачи
+                        различных заказчиков.
+                    </li>
+
+                    <li>
+                        Автоматизировал рутинные процессы
+                        и работу с данными.
+                    </li>
+
+                    <li>
+                        Интегрировал сторонние сервисы через API.
+                    </li>
+
+                    <li>
+                        Собирал, обрабатывал и анализировал данные.
+                    </li>
+
+                    <li>
+                        Работал с веб-сервисами и различными
+                        источниками информации.
+                    </li>
+
+                    <li>
+                        Самостоятельно изучал новые технологии
+                        и инструменты.
+                    </li>
+
+                    <li>
+                        Вёл задачи от постановки до готового результата.
+                    </li>
+
+                    <li>
+                        Общался с заказчиками и уточнял требования.
+                    </li>
+
+                    <li>
+                        Находил ошибки и оптимизировал существующие решения.
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     VIBE CODING
+========================= -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            04 — AI и разработка
+        </div>
+
+
+        <h2>
+            Vibe Coding
+        </h2>
+
+
+        <div class="vibe-box">
+
+
+            <h3>
+                Разработка с использованием AI
+            </h3>
+
+
+            <p>
+
+                Использую подход
+                <strong>Vibe Coding</strong>
+                для быстрого создания прототипов,
+                автоматизации процессов и проверки
+                различных идей с помощью AI-инструментов.
+
+            </p>
+
+
+            <div class="vibe-list">
+
+
+                <div>
+                    Быстрое создание рабочих прототипов
+                </div>
+
+
+                <div>
+                    Использование AI при разработке
+                </div>
+
+
+                <div>
+                    Автоматизация рутинных процессов
+                </div>
+
+
+                <div>
+                    Быстрое тестирование гипотез
+                </div>
+
+
+                <div>
+                    Поиск и проверка технических решений
+                </div>
+
+
+                <div>
+                    Создание небольших инструментов и MVP
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MEDIA BUYING
+========================= -->
+
+<section id="media-buying">
+
+    <div class="container">
+
+
+        <div class="section-label">
+            05 — Арбитраж трафика
+        </div>
+
+
+        <h2>
+            Media Buying
+        </h2>
+
+
+        <div class="media-grid">
+
+
+            <div class="media-card">
+
+                <h3>
+                    Текущий уровень
+                </h3>
+
+                <p>
+
+                    Коммерческого опыта закупки трафика пока нет.
+                    При этом активно пытаюсь развиваться в направлении
+                    арбитража трафикак.
+
+                </p>
+
+            </div>
+
+
+            <div class="media-card">
+
+                <h3>
+                    Интересующие направления
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Запуск и тестирование рекламных кампаний
+                    </li>
+
+                    <li>
+                        Поиск и тестирование рекламных связок
+                    </li>
+
+                    <li>
+                        Анализ рекламных показателей
+                    </li>
+
+                    <li>
+                        Тестирование креативов
+                    </li>
+
+                    <li>
+                        Работа с аналитикой и трекерами
+                    </li>
+
+                    <li>
+                        Оптимизация рекламных кампаний
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+            <div class="media-card">
+
+                <h3>
+                    Моё преимущество
+                </h3>
+
+                <p>
+
+                    Технический опыт позволяет использовать
+                    Python, автоматизацию, AI и аналитику
+                    для решения задач, которые могут быть
+                    полезны в Media Buying.
+
+                </p>
+
+            </div>
+
+
+            <div class="media-card">
+
+                <h3>
+                    Рабочий подход
+                </h3>
+
+                <p>
+
+                    Гипотеза → тест → данные → анализ →
+                    оптимизация.
+
+                    Привык работать итеративно, быстро проверять
+                    идеи и принимать решения на основе результатов.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CAREER GOAL
+========================= -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            06 — Цель
+        </div>
+
+
+        <h2>
+            Профессиональное развитие
+        </h2>
+
+
+        <div class="goal">
+
+
+            <p>
+
+                Получить позицию
+                <span class="highlight">
+                    Junior Media Buyer / Trainee Media Buyer
+                </span>
+                и развиваться в направлении performance marketing.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Хочу объединить
+                <span class="highlight">
+                    Media Buying + свои знания
+                </span>,
+                чтобы эффективно работать с рекламными кампаниями
+                и создавать собственные инструменты для автоматизации,
+                анализа данных и ускорения рабочих процессов.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                В перспективе хочу стать сильным Media Buyer
+                с техническим уклоном, способным самостоятельно
+                запускать, анализировать и оптимизировать рекламные
+                кампании, а также автоматизировать значительную
+                часть рутинных процессов.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+
+        <div class="contact-box">
+
+
+            <div class="section-label">
+                07 — Контакты
+            </div>
+
+
+            <h2>
+                Давайте знакомиться
+            </h2>
+
+
+            <p>
+
+                Открыт к предложениям на позицию Junior Media Buyer,
+                обучению и работе в команде.
+
+            </p>
+
+
+            <div class="buttons contact-buttons">
+
+
+                <a
+                    href="https://t.me/owumali"
+                    class="btn btn-primary"
+                    target="_blank">
+
+                    Telegram
+
+                </a>
+
+
+                <a
+                    href="mailto:nichegosebe2026@outlook.com"
+                    class="btn btn-secondary">
+
+                    Email
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 Vladislav Diachkov · Junior Media Buyer ·
+
+</footer>
+
+
+</body>
+</html>
